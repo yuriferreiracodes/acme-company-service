@@ -41,6 +41,8 @@ services:
             MYSQL_DATABASE: acme_company
         volumes:
             - ./docker/mysql/dbdata:/var/lib/mysql
+        ports:
+            - 3308:3306
         networks:
             - net
 
