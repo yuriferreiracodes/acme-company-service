@@ -1,6 +1,6 @@
 services:
-    acme_service_company:
-        container_name: acme_service_company
+    acme_company_service:
+        container_name: acme_company_service
         build:
             context: .
             args:
@@ -28,7 +28,7 @@ services:
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
         depends_on:
-            - acme_service_company
+            - acme_company_service
         networks:
             - net
 

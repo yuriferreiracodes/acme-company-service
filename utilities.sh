@@ -21,13 +21,13 @@ case $choice in
     done
 
     echo "📦 Installing Composer dependencies..."
-    docker exec -it acme_service_company composer install
+    docker exec -it acme_company_service composer install
 
     echo "🔐 Generating Laravel app key..."
-    docker exec -it acme_service_company php artisan key:generate
+    docker exec -it acme_company_service php artisan key:generate
 
     echo "🧰 Running migrations and seeders..."
-    docker exec -it acme_service_company php artisan migrate:fresh --seed
+    docker exec -it acme_company_service php artisan migrate:fresh --seed
 
     echo "✅ Project is ready at: http://localhost:8080"
     ;;
