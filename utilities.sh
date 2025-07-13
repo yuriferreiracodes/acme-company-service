@@ -29,6 +29,9 @@ case $choice in
     echo "🧰 Running migrations and seeders..."
     docker exec -it acme_company_service php artisan migrate:fresh --seed
 
+    echo "🚀 Installing API..."
+    docker exec -it acme_company_service php artisan install:api
+
     echo "✅ Project is ready at: http://localhost:8080"
     ;;
   2)
